@@ -22,8 +22,8 @@ def info():
 def menu():
     print("Escolha uma opção:")
     print("\t1. Calcular raio da órbita, velocidade, energia cinética, energia potencial e energia total para um valor de n.")
-    print("\t2. Sair do programa")
-    print("\t3. conversor de medidas")
+    print("\t2. Conversor de medias")
+    print("\t3. Sair do Programa")
     
 def menu2():
     print("Escolha uma opção de conversão:")
@@ -46,6 +46,9 @@ def calculo_Bohr(n):
     # Cálculo da energia total
     energia_total = -(13.6/(n**2))
     
+    # Cálculo do comprimento de onda
+    comprimento_onda = (constante_plank/(massa_eletron*velocidade))
+    
     # Saída com resultados
     print(f"\nResultados para n = {n:.3e}: ")
     print(f"Raio da órbita: {raio_orbita:.3e} m")
@@ -53,6 +56,7 @@ def calculo_Bohr(n):
     print(f"Energia Cinética: {energia_cinetica:.3e} J")
     print(f"Energia Potencial: {energia_potencial:.3e} J")
     print(f"Energia Total: {energia_total:.3e} J")
+    print(f"Comprimento de onda: {comprimento_onda:.3e} m")
 
 # Conversor de m para nm    
 def conversor1(n2):
@@ -74,10 +78,10 @@ def main():
         if e ==1:
             n = int(input("Digite o nível quantico: "))
             calculo_Bohr(n)
-        elif e ==2:
+        elif e ==3:
             print("Saindo do programa: ")
             break
-        elif e ==3:
+        elif e ==2:
             menu2()
             e2 = int(input())
             if e2==1:
