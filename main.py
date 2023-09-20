@@ -22,23 +22,30 @@ def menu():
     print("Escolha uma opção:")
     print("\t1. Calcular raio da órbita, velocidade, energia cinética, energia potencial e energia total para um valor de n.")
     print("\t2. Sair do programa")
-    print()
+    print("\t3. conversor de medidas")
+    
+def menu2():
+    print("Escolha uma opção de conversão:")
+    print("\t1. m para nm")
+    print("\t2. J para ev")
 
 def calculo_Bohr(n):
     # Cálculo do raio da órbita
-    raio_orbita = (4 * math.pi * perm_vacuo * (n ** 2) * (constante_plank ** 2)) / (massa_eletron * (carga_eletron ** 2))
+    raio_orbita = ((n**2)*5.29e-11)
 
     # Cálculo da velocidade do elétron
-    velocidade = (carga_eletron ** 2) / (4 * math.pi * perm_vacuo * raio_orbita * massa_eletron)
+    velocidade = (2.187e6/n)
 
     # Cálculo da energia cinética
-    energia_cinetica = (1 / 2) * massa_eletron * (velocidade ** 2)
+    energia_cinetica = (13.6/(n**2))
 
     # Cálculo da energia potencial
-    energia_potencial = -(carga_eletron ** 2) / (4 * math.pi * perm_vacuo * raio_orbita)
+    energia_potencial = -(27.2/(n**2))
 
     # Cálculo da energia total
-    energia_total = energia_cinetica + energia_potencial
+    energia_total = (+13.6/(n**2))
+    
+    # Saída com resultados
     print(f"\nResultados para n = {n:.3e}: ")
     print(f"Raio da órbita: {raio_orbita:.3e} m")
     print(f"Velocidade do elétron: {velocidade:.3e} m/s")
@@ -46,18 +53,40 @@ def calculo_Bohr(n):
     print(f"Energia Potencial: {energia_potencial:.3e} J")
     print(f"Energia Total: {energia_total:.3e} J")
 
+# Conversor de m para nm    
+def conversor1(n2):
+    nm = n2*1e9
+    print(f"{n2:.3e} metros equivalem a {nm:.3e} nanômetros")
+
+# Conversor de J para eV
+def conversor2(n2):
+    ev=n2*6.242e12
+    print(f"{n2:.3e} Joules equivalem a {ev:.3e} eletronvolts (eV)")
+    
+    
  
 def main():
     info()
     while True:
         menu()
-        e = int(input("\tDigite o número desejado: "))
+        e = int(input())
         if e ==1:
             n = int(input("Digite o nível quantico: "))
             calculo_Bohr(n)
-        elif e == 2:
+        elif e ==2:
             print("Saindo do programa: ")
             break
+        elif e ==3:
+            menu2()
+            e2 = int(input())
+            if e2==1:
+                n2 = float(input("Digite o valor que você gostaria de converter: "))
+                conversor1(n2)
+            elif e2==2:
+                n2 = float(input("Digite o valor que você gostaria de converter: "))
+                conversor2(n2)
+            else:
+                print("Opção inválida por favor digite novamente")
         else:
             print("Opção inválida, por favor selecione novamente.")
             
