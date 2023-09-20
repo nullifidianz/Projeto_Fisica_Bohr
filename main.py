@@ -10,8 +10,9 @@ constante_velocidade_luz = 3e8  # m/s
 def info():
     print("Programa que realiza cálculos relacionados ao modelo de Bohr para o átomo de hidrogênio para a matéria CF3121 - Tópicos de Optica e Física Moderna")
     print()
-    print("Este programa procura realizar conversões entre diferentes unidades e calcular valores como:\n*frequência\n*comprimento de onda\n*número de onda\n*frequência angular\n*amplitude do campo elétrico\n*amplitude do campo magnético\n*intensidade")
+    print("Este programa procura realizar conversões entre diferentes unidades e calcular valores como: raio da órbita, velocidade, energia cinética, energia potencial e energia total para um valor de n.")
     print()
+    print("O modelo de Bohr para o átomo de hidrogênio é uma teoria que descreve a estrutura simplificada desse átomo, levando em consideração a ideia de órbitas eletrônicas quantizadas. Ele introduz o conceito de números quânticos para descrever o nível de energia das órbitas e permite calcular propriedades como raio da órbita, velocidade do elétron e energias cinética e potencial. Este modelo foi um avanço importante na compreensão da estrutura atômica e serviu como base para desenvolvimentos posteriores na teoria quântica.")
     print("Feito por: João Paulo Paggi Zuanon Dias - RA: 22.222.058-4")
     print("Feito por: Mateus Rocha - RA: 22.222.022-2")
     print("Feito por: Leandro de Brito Alencar - RA: 22.222.034-5")
@@ -57,14 +58,14 @@ def calculo_Bohr(n):
 def conversor1(n2):
     nm = n2*1e9
     print(f"{n2:.3e} metros equivalem a {nm:.3e} nanômetros")
+    print()
 
 # Conversor de J para eV
 def conversor2(n2):
     ev=n2*6.242e12
     print(f"{n2:.3e} Joules equivalem a {ev:.3e} eletronvolts (eV)")
+    print()
     
-    
- 
 def main():
     info()
     while True:
