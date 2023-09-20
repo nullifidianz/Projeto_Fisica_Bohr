@@ -44,7 +44,7 @@ def calculo_Bohr(n):
     energia_potencial = -(27.2/(n**2))
 
     # Cálculo da energia total
-    energia_total = (+13.6/(n**2))
+    energia_total = -(13.6/(n**2))
     
     # Saída com resultados
     print(f"\nResultados para n = {n:.3e}: ")
