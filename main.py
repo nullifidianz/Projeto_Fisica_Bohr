@@ -17,7 +17,7 @@ def info():
     print("Feito por: Mateus Rocha - RA: 22.222.022-2")
     print("Feito por: Leandro de Brito Alencar - RA: 22.222.034-5")
     print()
-    print("***************************************************************",)
+    print("***************************************************************")
     
 def menu():
     print("Escolha uma opção:")
